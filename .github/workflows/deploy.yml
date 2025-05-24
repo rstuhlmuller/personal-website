@@ -1,0 +1,46 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - v*
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::716182248480:role/Github-Actions-IDP
+          role-session-name: personal-website-gh-deployment
+          audience: sts.amazonaws.com
+
+      - name: Install
+        run: |
+          cd personal-website
+          yarn install --frozen-lockfile
+          yarn add @vue/cli-service
+
+      - name: Build
+        run: |
+          cd personal-website
+          yarn build
+
+      - name: Push to S3
+        run: |
+          cd personal-website
+          aws s3 sync --delete ./dist s3://rstuhlmuller-s3-use1-personal-site/my-website/ --only-show-errors
+
+      - name: Invalidate CloudFront
+        run: |
+          cd personal-website
+          aws cloudfront create-invalidation --distribution-id EFQ36XOOE7NEJ --paths "/*"
