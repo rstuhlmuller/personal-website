@@ -3,7 +3,8 @@ layout: post
 title: Reworking my Personal Site
 date: 2025-07-18 21:30 -0700
 categories: [Personal Site]
-tags: [jekyll, aws, webdev, static-sites]
+tags: [jekyll, aws, webdev, static sites]
+author: rodman
 ---
 
 I've been tinkering with my personal site again, and I decided to switch things up. I moved it from a Vue.js setup to Jekyll, purely because I'm leaning into the joys of a fully static site these days.
