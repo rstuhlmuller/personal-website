@@ -35,6 +35,7 @@ jobs:
         with:
           aws-region: us-west-2
           role-to-assume: arn:aws:iam::716182248480:role/Github-Actions-IDP
+          role-session-name: github-actions-deployment
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
