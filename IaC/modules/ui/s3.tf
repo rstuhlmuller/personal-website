@@ -23,20 +23,10 @@ resource "aws_s3_object" "my_website" {
   etag         = filemd5("../my_website/${each.value}")
 }
 
-data "aws_iam_policy_document" "s3_policy" {
-  statement {
-    sid       = "my_website"
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.my_website.arn}/*"]
 
-    principals {
-      type        = "AWS"
-      identifiers = [aws_cloudfront_origin_access_identity.my_website.iam_arn]
-    }
-  }
-}
-
-resource "aws_s3_bucket_policy" "cloudfront_policy" {
-  bucket = aws_s3_bucket.my_website.id
-  policy = data.aws_iam_policy_document.s3_policy.json
+resource "aws_cloudfront_origin_access_control" "my_website" {
+  name                              = "my_website"
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
 }
