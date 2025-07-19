@@ -2,15 +2,14 @@ name: "Build and Deploy"
 on:
   push:
     tags:
-      - "*" # Trigger on version tags like v1.0.0
+      - "*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
+  id-token: write  # This is required for requesting the JWT to access AWS
   contents: read
-  pages: write
-  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -31,7 +30,7 @@ jobs:
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
       - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v4.1.0
         with:
           aws-region: us-west-2
           role-to-assume: arn:aws:iam::716182248480:role/Github-Actions-IDP
