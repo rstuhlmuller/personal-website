@@ -6,7 +6,7 @@ order: 4
 
 # Hey, I'm Rodman 👋
 
-![A photo of you](https://www.gravatar.com/avatar/6118cd4bd48fe8cceced48827dbea457?s=200)
+<img src="/assets/img/photos/RodmanAndTabi.jpeg" alt="drawing" width="400"/>
 
 I'm a Senior DevOps Engineer with a passion for building efficient, scalable, and user-friendly solutions. I love turning complex problems into simple, beautiful code.
 
