@@ -1,13 +1,8 @@
 name: "Build and Deploy"
 on:
   push:
-    branches:
-      - main
-      - master
-    paths-ignore:
-      - .gitignore
-      - README.md
-      - LICENSE
+    tags:
+      - "v*.*.*" # Trigger on version tags like v1.0.0
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,7 +14,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: "deployment"
   cancel-in-progress: true
 
 jobs:
@@ -35,9 +30,11 @@ jobs:
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-west-2
+          role-to-assume: Github-Actions-IDP
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -46,7 +43,7 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll b -d "_site"
         env:
           JEKYLL_ENV: "production"
 
@@ -56,18 +53,7 @@ jobs:
             \-\-disable-external \
             \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_site${{ steps.pages.outputs.base_path }}"
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to AWS Cloudfront
+        run: |
+          aws s3 sync _site s3://$AWS_BUCKET_NAME --delete
+          aws cloudfront create-invalidation --distribution-id $EFQ36XOOE7NEJ --paths "/*"
