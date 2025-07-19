@@ -57,5 +57,5 @@ jobs:
 
       - name: Deploy to AWS Cloudfront
         run: |
-          aws s3 sync _site s3://$AWS_BUCKET_NAME --delete
-          aws cloudfront create-invalidation --distribution-id $EFQ36XOOE7NEJ --paths "/*"
+          aws s3 sync _site s3://${{ vars.AWS_BUCKET_NAME }} --delete
+          aws cloudfront create-invalidation --distribution-id ${{ vars.AWS_DISTRIBUTION_ID }} --paths "/*"
