@@ -16,9 +16,9 @@ concurrency:
   group: "deployment"
   cancel-in-progress: true
 
-environment: production
 
 jobs:
+  environment: production
   build:
     runs-on: ubuntu-latest
 
