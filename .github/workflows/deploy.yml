@@ -2,7 +2,7 @@ name: "Build and Deploy"
 on:
   push:
     tags:
-      - "v*.*.*" # Trigger on version tags like v1.0.0
+      - "*" # Trigger on version tags like v1.0.0
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-west-2
-          role-to-assume: Github-Actions-IDP
+          role-to-assume: arn:aws:iam::716182248480:role/Github-Actions-IDP
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
