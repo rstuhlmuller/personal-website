@@ -64,7 +64,7 @@ analytics:
     id: # fill in your GoatCounter ID
   umami:
     id: 5971c5f3-e21a-492e-a230-8271f1eae84b # fill in your Umami ID
-    domain: rodman.stuhlmuller.net # fill in your Umami domain
+    domain: cloud.umami.is # fill in your Umami domain
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
