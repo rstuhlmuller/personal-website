@@ -72,6 +72,8 @@ analytics:
     id: # fill in your Cloudflare Web Analytics token
   fathom:
     id: # fill in your Fathom Site ID
+  posthog:
+    id: phc_Q8Vyh3UQzS4Tg1YJeXkK3ta5iHZ2yNusQSAz2E96IvB
 
 # Page views settings
 pageviews:
