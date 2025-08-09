@@ -72,6 +72,9 @@ analytics:
     id: # fill in your Cloudflare Web Analytics token
   fathom:
     id: # fill in your Fathom Site ID
+  highlight:
+    id: 2d1yym3d
+    domain: https://unpkg.com/highlight.run
 
 # Page views settings
 pageviews:
