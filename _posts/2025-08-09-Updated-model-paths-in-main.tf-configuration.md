@@ -2,7 +2,8 @@
 layout: post 
 title: "Updated model paths in main.tf configuration."
 date: 2025-08-09T17:02:55.475-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary
