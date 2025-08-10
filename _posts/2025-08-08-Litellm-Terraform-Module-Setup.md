@@ -2,7 +2,8 @@
 layout: post 
 title: Litellm Terraform Module Setup
 date: 2025-08-08T01:51:29.463-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary

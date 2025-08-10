@@ -2,7 +2,8 @@
 layout: post 
 title: Add Umami Monitoring Integration
 date: 2025-07-27T13:51:09.001-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary

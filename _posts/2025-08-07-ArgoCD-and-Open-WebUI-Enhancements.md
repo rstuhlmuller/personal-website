@@ -2,7 +2,8 @@
 layout: post 
 title: ArgoCD and Open-WebUI Enhancements
 date: 2025-08-07T17:53:55.240-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary

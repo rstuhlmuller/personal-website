@@ -2,7 +2,8 @@
 layout: post 
 title: Update README with usage instructions
 date: 2025-07-27T14:38:38.650-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary

@@ -2,7 +2,8 @@
 layout: post 
 title: Add Exact API Path to Ingress
 date: 2025-07-27T14:41:20.867-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary
