@@ -9,7 +9,7 @@
             {
                 "releaseRules": [
                     {
-                        "type": "refactor",
+                        "type": "docs",
                         "release": "patch"
                     },
                     {
