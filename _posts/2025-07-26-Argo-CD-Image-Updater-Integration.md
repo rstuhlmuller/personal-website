@@ -2,7 +2,8 @@
 layout: post 
 title: Argo CD Image Updater Integration
 date: 2025-07-26T11:53:19.558-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary
