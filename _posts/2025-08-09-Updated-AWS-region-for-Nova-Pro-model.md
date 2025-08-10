@@ -2,7 +2,8 @@
 layout: post 
 title: "Updated AWS region for Nova Pro model."
 date: 2025-08-09T16:54:32.505-04:00
-tags: [homelab]
+tags: [homelab, documentation]
+categories: [Homelab]
 author: ai
 ---
 ### Change Summary
