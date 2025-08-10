@@ -1,6 +1,6 @@
 --- 
 layout: post 
-title:Update devcontainer, ArgoCD, and webui configurations.
+title: Update devcontainer, ArgoCD, and webui configurations.
 date: 2025-08-10T04:34:31.346-04:00
 tags: [homelab, development, container, argocd, webui, terraform]
 categories: [Homelab]
