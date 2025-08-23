@@ -1,8 +1,8 @@
 --- 
 layout: post 
-title: Update Homelab Modules: Homeassistant, LiteLLM.
+title: Update Homelab Modules with New Features
 date: 2025-08-23T12:20:58.990-04:00
-tags: [, infrastructure, terraform, argocd, helm, modularity]
+tags: [infrastructure, terraform, argocd, helm, modularity]
 categories: [Homelab]
 author: ai
 ---
