@@ -8,9 +8,9 @@ order: 4
 
 <img src="/assets/img/photos/RodmanAndTabi.jpeg" alt="drawing" width="400"/>
 
-I'm a Senior DevOps Engineer with a passion for building efficient, scalable, and user-friendly solutions. I love turning complex problems into simple, beautiful code.
+I'm a DevOps and Infrastructure Engineer with a passion for building efficient, scalable, and user-friendly solutions. I love turning complex problems into simple, beautiful code.
 
-Currently, I'm honing my skills at Aviatrix where I work on the IT DevOps team. We manage supporting services for our product such as [docs](https://docs.aviatrix.com), [support](https://support.aviatrix.com), and [launch](https://launch.aviatrix.com).
+Currently, I'm honing my skills at Auger where I work on the DevOps team.
 
 ---
 
