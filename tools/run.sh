@@ -15,6 +15,7 @@ help() {
   echo "     -H, --host [HOST]    Host to bind to."
   echo "     -p, --production     Run Jekyll in 'production' mode."
   echo "     -h, --help           Print this help information."
+  return 0
 }
 
 while (($#)); do
@@ -46,7 +47,7 @@ if $prod; then
   command="JEKYLL_ENV=production $command"
 fi
 
-if [ -e /proc/1/cgroup ] && grep -q docker /proc/1/cgroup; then
+if [[ -e /proc/1/cgroup ]] && grep -q docker /proc/1/cgroup; then
   command="$command --force_polling"
 fi
 
