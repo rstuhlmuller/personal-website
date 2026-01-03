@@ -24,6 +24,7 @@ help() {
   echo "Options:"
   echo '     -c, --config   "<config_a[,config_b[...]]>"    Specify config file(s)'
   echo "     -h, --help               Print this information."
+  return 0
 }
 
 read_baseurl() {
@@ -46,6 +47,7 @@ read_baseurl() {
     # single config
     _baseurl="$(grep '^baseurl:' "$_config" | sed "s/.*: *//;s/['\"]//g;s/#.*//")"
   fi
+  return 0
 }
 
 main() {
@@ -64,6 +66,7 @@ main() {
   bundle exec htmlproofer "$SITE_DIR" \
     --disable-external \
     --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+  return 0
 }
 
 while (($#)); do
