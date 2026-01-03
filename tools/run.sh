@@ -15,6 +15,7 @@ help() {
   echo "     -H, --host [HOST]    Host to bind to."
   echo "     -p, --production     Run Jekyll in 'production' mode."
   echo "     -h, --help           Print this help information."
+  return
 }
 
 while (($#)); do
