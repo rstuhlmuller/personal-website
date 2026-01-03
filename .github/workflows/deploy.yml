@@ -10,10 +10,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-permissions:
-  id-token: write  # This is required for requesting the JWT to access AWS
-  contents: read
-
 # Allow one concurrent deployment
 concurrency:
   group: "deployment"
@@ -21,6 +17,9 @@ concurrency:
 
 jobs:
   build:
+    permissions:
+      id-token: write  # This is required for requesting the JWT to access AWS
+      contents: read
     environment: production
     runs-on: ubuntu-latest
 
