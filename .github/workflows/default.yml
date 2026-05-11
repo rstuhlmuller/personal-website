@@ -12,6 +12,6 @@ jobs:
       contents: read
       checks: write
       statuses: write
-    uses: stuhlmuller/workflows/.github/workflows/default.yml@74b5e31d5e16c52d9ee79eaf44f580135065beda # main
+    uses: stuhlmuller/workflows/.github/workflows/default.yml@9de6d6310256cd5ff99d29bca00ce4e5201671c0 # main
     with:
       checkov: false
